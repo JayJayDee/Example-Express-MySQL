@@ -7,8 +7,8 @@ const log = require('../logger')('[mysql]');
 let pool = null;
 
 const mysqlops = async (opsFunc) => {
+  const con = await pool.getConnection();
   try {
-    const con = await pool.getConnection();
     return await opsFunc(con);
   } finally {
     con.release();

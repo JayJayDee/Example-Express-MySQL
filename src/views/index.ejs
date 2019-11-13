@@ -1,0 +1,31 @@
+<% include header.ejs %>
+
+<style type="text/css">
+.rounded-circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+}
+</style>
+
+<div class="row">
+  <div class="col-sm">
+    
+  </div>
+</div>
+
+<% products.forEach((product) => { %>
+<div class="row">
+  <div class="col-sm">
+    <img src="<%= product.image_url %>" class="mx-auto rounded-circle">
+    <span><%= product.product_name %></span>
+  </div>
+  <div class="col-sm">
+    <p><%= product.product_desc %></p>
+  </div>
+</div>
+<% }) %>
+
+<% include footer.ejs %>
